@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rest-sample-springData-jpa-sql" />
+        <module name="rest-sample-springData-jooq" />
+        <module name="rest-sample-springData-jdbc" />
+        <module name="rest-sample-springData-jpa-mongodb" />
+        <module name="rest-sample-jdbc-template" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="rest-sample-jdbc-template" options="-parameters" />
+      <module name="rest-sample-springData-jdbc" options="-parameters" />
+      <module name="rest-sample-springData-jooq" options="-parameters" />
+      <module name="rest-sample-springData-jpa-mongodb" options="-parameters" />
+      <module name="rest-sample-springData-jpa-sql" options="-parameters" />
+    </option>
+  </component>
+</project>
