@@ -1,0 +1,41 @@
+# Maven target directory
+/target/
+
+# Build directory for IDE
+/out/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+*.class
+*.jar
+*.war
+*.ear
+
+# Local configuration files
+/application-dev.yml
+/application-test.yml
+/application-prod.yml
+*.properties
+
+# Other common files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Ignore the .env file if you use it for local configuration
+.env
