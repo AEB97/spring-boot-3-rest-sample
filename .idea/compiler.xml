@@ -7,11 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rest-sample-springData-jpa-sql" />
         <module name="rest-sample-springData-jooq" />
         <module name="rest-sample-springData-jdbc" />
         <module name="rest-sample-springData-jpa-mongodb" />
         <module name="rest-sample-jdbc-template" />
+      </profile>
+      <profile name="Annotation profile for spring-boot-3-rest-sample" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.28/lombok-1.18.28.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
+        </processorPath>
+        <module name="rest-sample-springData-jpa-sql" />
       </profile>
     </annotationProcessing>
   </component>
