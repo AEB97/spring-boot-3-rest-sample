@@ -1,0 +1,138 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1729606111723-1
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: comment_seq
+            startValue: 1
+  - changeSet:
+      id: 1729606111723-2
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: post_seq
+            startValue: 1
+  - changeSet:
+      id: 1729606111723-3
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: user_seq
+            startValue: 1
+  - changeSet:
+      id: 1729606111723-4
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_comment
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  name: author_name
+                  type: VARCHAR(255)
+              - column:
+                  name: body
+                  type: VARCHAR(255)
+              - column:
+                  name: created_on
+                  type: DATETIME
+              - column:
+                  name: updated_on
+                  type: DATETIME
+              - column:
+                  name: post_id
+                  type: BIGINT
+            tableName: comment
+  - changeSet:
+      id: 1729606111723-5
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_post
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: body
+                  type: VARCHAR(255)
+              - column:
+                  name: slug
+                  type: VARCHAR(255)
+              - column:
+                  name: post_status
+                  type: SMALLINT
+              - column:
+                  name: created_on
+                  type: DATETIME
+              - column:
+                  name: updated_on
+                  type: DATETIME
+            tableName: post
+  - changeSet:
+      id: 1729606111723-6
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: NVARCHAR(75)
+            tableName: user
+  - changeSet:
+      id: 1729606111723-7
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_user_name
+            tableName: user
+  - changeSet:
+      id: 1729606111723-8
+      author: potato (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: post_id
+            baseTableName: comment
+            constraintName: FK_COMMENT_ON_POST
+            referencedColumnNames: id
+            referencedTableName: post
+
